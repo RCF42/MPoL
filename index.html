@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Million Points of Light (MPoL) &mdash; MPoL 0.1.1.dev0 documentation</title>
+  <title>Million Points of Light (MPoL) &mdash; MPoL 0.1.1 documentation</title>
   
 
   
@@ -31,6 +31,7 @@
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://buttons.github.io/buttons.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -42,11 +43,12 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/bullets.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/faculty.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Roboto:400,700|Roboto+Mono:400,700&display=swap" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Introduction to Regularized Maximum Likelihood Imaging" href="rml_intro.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -73,7 +75,7 @@
   
     
     
-      <div class="version">0.1.1.dev0</div>
+      <div class="version">0.1.1</div>
     
   
 
@@ -96,18 +98,23 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rml_intro.html">Introduction to Regularized Maximum Likelihood Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">MPoL Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="units-and-conventions.html">Units and Conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer-documentation.html">Developer Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/gridder.html">Gridding and diagnostic images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/optimization.html">Optimization Loop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/crossvalidation.html">Cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/PyTorch.html">Introduction to PyTorch: Tensors and Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/gridder.html">Gridding and diagnostic images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/optimization.html">Optimization Loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/crossvalidation.html">Cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/gpu_setup.html">GPU Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html">Initializing with the Dirty Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="large-tutorials/HD143006_part_1.html">HD143006 Tutorial Part 1</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -183,16 +190,27 @@
 <h1>Million Points of Light (MPoL)<a class="headerlink" href="#million-points-of-light-mpol" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/MPoL-dev/MPoL/actions/workflows/tests.yml"><img alt="Tests badge" src="https://github.com/MPoL-dev/MPoL/actions/workflows/tests.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/MPoL-dev/MPoL/discussions"><img alt="Discussions badge" src="https://img.shields.io/badge/community-Github%20Discussions-orange" /></a></p>
-<p>MPoL is a Python framework for Regularized Maximum Likelihood (RML) imaging. It is built on top of PyTorch, which provides state of the art auto-differentiation capabilities and optimizers. We focus on supporting continuum and spectral line observations from interferometers like the Atacama Large Millimeter/Submillimeter Array (ALMA) and the Karl G. Jansky Very Large Array (VLA). There is potential to extend the package to work on other Fourier reconstruction problems like sparse aperture masking and kernel phase interferometry.</p>
-<p>To get a sense of how MPoL works, please take a look at the tutorials down below. If you have any questions, please join us on our <a class="reference external" href="https://github.com/MPoL-dev/MPoL/discussions">Github discussions page</a>.</p>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/MPoL-dev/MPoL" data-color-scheme="no-preference: light; light: light; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star MPoL-dev/MPoL on GitHub">Star</a>
+<a class="github-button" href="https://github.com/MPoL-dev/MPoL/discussions" data-color-scheme="no-preference: light; light: light; dark: dark_dimmed;" data-icon="octicon-comment-discussion" data-size="large" aria-label="Discuss MPoL-dev/MPoL on GitHub">Discuss</a><p>MPoL is a Python framework for Regularized Maximum Likelihood (RML) imaging. It is built on top of PyTorch, which provides state of the art auto-differentiation capabilities and optimizers. We focus on supporting continuum and spectral line observations from interferometers like the Atacama Large Millimeter/Submillimeter Array (ALMA) and the Karl G. Jansky Very Large Array (VLA). There is potential to extend the package to work on other Fourier reconstruction problems like sparse aperture masking and other forms of optical interferometry.</p>
+<p>To get a sense of how MPoL works, please take a look at the <a class="reference internal" href="rml_intro.html#rml-intro-label"><span class="std std-ref">Introduction to Regularized Maximum Likelihood Imaging</span></a> and then the tutorials down below. If you have any questions, please join us on our <a class="reference external" href="https://github.com/MPoL-dev/MPoL/discussions">Github discussions page</a>.</p>
 <p>If you’d like to help build the MPoL package, please check out the <a class="reference internal" href="developer-documentation.html#developer-documentation-label"><span class="std std-ref">Developer Documentation</span></a> to get started. For more information about the constellation of packages supporting RML imaging and modeling, check out the MPoL-dev organization <a class="reference external" href="https://mpol-dev.github.io/">website</a> and <a class="reference external" href="https://github.com/MPoL-dev">github</a> repository hosting the source code.</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="rml_intro.html">Introduction to Regularized Maximum Likelihood Imaging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rml_intro.html#introduction-to-likelihood-functions">Introduction to Likelihood functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rml_intro.html#data-in-the-fourier-domain">Data in the Fourier domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rml_intro.html#likelihood-functions-for-fourier-data">Likelihood functions for Fourier data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rml_intro.html#rml-images-as-non-parametric-models">RML images as non-parametric models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rml_intro.html#the-mpol-package-for-regularized-maximum-likelihood-imaging">The MPoL package for Regularized Maximum Likelihood imaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">MPoL Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#using-pip">Using pip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#from-source">From source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#upgrading">Upgrading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#using-cuda-acceleration">Using CUDA acceleration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="units-and-conventions.html">Units and Conventions</a><ul>
@@ -223,33 +241,65 @@
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/gridder.html">Gridding and diagnostic images</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#Importing-data">Importing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#The-GridCoords-object">The GridCoords object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#The-Gridder-object">The Gridder object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#Visualizing-the-images">Visualizing the images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/PyTorch.html">Introduction to PyTorch: Tensors and Gradient Descent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/PyTorch.html#Introduction-to-Tensors">Introduction to Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/PyTorch.html#Calculating-Gradients">Calculating Gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/PyTorch.html#Optimizing-a-Function-with-Gradient-Descent">Optimizing a Function with Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/PyTorch.html#Additional-Resources">Additional Resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/optimization.html">Optimization Loop</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Gridding-recap">Gridding recap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#The-PyTorch-dataset">The PyTorch dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Building-an-image-model">Building an image model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Breaking-down-the-training-loop">Breaking down the training loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Loss-functions">Loss functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Gradient-descent">Gradient descent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Iterating-the-training-Loop">Iterating the training Loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Visualizing-output">Visualizing output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/optimization.html#Wrapup">Wrapup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/gridder.html">Gridding and diagnostic images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gridder.html#Importing-data">Importing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gridder.html#The-GridCoords-object">The GridCoords object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gridder.html#The-Gridder-object">The Gridder object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gridder.html#Visualizing-the-images">Visualizing the images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gridder.html#Checking-data-weights">Checking data weights</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/crossvalidation.html">Cross validation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crossvalidation.html#Setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crossvalidation.html#K-fold-cross-validation">K-fold cross validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crossvalidation.html#Choosing-the-K-folds">Choosing the <span class="math notranslate nohighlight">\(K\)</span>-folds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crossvalidation.html#The-cross-validation-loop">The cross validation loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crossvalidation.html#Results">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/optimization.html">Optimization Loop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Gridding-recap">Gridding recap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#The-PyTorch-dataset">The PyTorch dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Building-an-image-model">Building an image model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Breaking-down-the-training-loop">Breaking down the training loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Loss-functions">Loss functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Gradient-descent">Gradient descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Iterating-the-training-Loop">Iterating the training Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Visualizing-output">Visualizing output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/optimization.html#Wrapup">Wrapup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/crossvalidation.html">Cross validation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/crossvalidation.html#Setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/crossvalidation.html#K-fold-cross-validation">K-fold cross validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/crossvalidation.html#Choosing-the-K-folds">Choosing the <span class="math notranslate nohighlight">\(K\)</span>-folds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/crossvalidation.html#The-cross-validation-loop">The cross validation loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/crossvalidation.html#Results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/gpu_setup.html">GPU Acceleration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gpu_setup.html#installation-and-configuration">Installation and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gpu_setup.html#why-use-the-gpu">Why use the GPU?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/gpu_setup.html#using-the-gpu-as-part-of-pytorch-and-mpol">Using the GPU as part of PyTorch and MPoL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html">Initializing with the Dirty Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Image-Setup">Image Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Model-and-Optimization-Setup">Model and Optimization Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Loss-Function">Loss Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Training-Loop">Training Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Saving-the-Model">Saving the Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Loading-the-Model">Loading the Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci-tutorials/initializedirtyimage.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="large-tutorials/HD143006_part_1.html">HD143006 Tutorial Part 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="large-tutorials/HD143006_part_1.html#Viewing-the-CLEAN-image">Viewing the CLEAN image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large-tutorials/HD143006_part_1.html#Plotting-the-Baselines">Plotting the Baselines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large-tutorials/HD143006_part_1.html#The-MPoL-Gridder-Object">The MPoL Gridder Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large-tutorials/HD143006_part_1.html#Making-diagnostic-dirty-images">Making diagnostic dirty images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large-tutorials/HD143006_part_1.html#Comparing-Dirty-and-CLEANed-Images">Comparing Dirty and CLEANed Images</a></li>
 </ul>
 </li>
 </ul>
@@ -257,16 +307,20 @@
 <div class="toctree-wrapper compound">
 </div>
 <p>If you use MPoL in your research, please cite us!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">MPoL</span><span class="p">,</span>
-<span class="n">author</span>       <span class="o">=</span> <span class="p">{</span><span class="n">Ian</span> <span class="n">Czekala</span><span class="p">,</span> <span class="n">Brianna</span> <span class="n">Zawadzki</span><span class="p">,</span> <span class="ow">and</span>
-                <span class="n">Ryan</span> <span class="n">Loomis</span><span class="p">},</span>
-<span class="n">title</span>        <span class="o">=</span> <span class="p">{</span><span class="n">iancze</span><span class="o">/</span><span class="n">MPoL</span><span class="p">:</span> <span class="n">A</span> <span class="n">flexible</span> <span class="n">Python</span> <span class="n">Framework</span> <span class="k">for</span> <span class="n">Regularized</span> <span class="n">Maximum</span> <span class="n">Likelihood</span> <span class="n">Imaging</span><span class="p">},</span>
-<span class="n">month</span>        <span class="o">=</span> <span class="n">feb</span><span class="p">,</span>
-<span class="n">year</span>         <span class="o">=</span> <span class="mi">2020</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">ian_czekala_2021_4939048</span><span class="p">,</span>
+<span class="n">author</span>       <span class="o">=</span> <span class="p">{</span><span class="n">Ian</span> <span class="n">Czekala</span> <span class="ow">and</span>
+               <span class="n">Brianna</span> <span class="n">Zawadzki</span> <span class="ow">and</span>
+               <span class="n">Ryan</span> <span class="n">Loomis</span> <span class="ow">and</span>
+               <span class="n">Hannah</span> <span class="n">Grzybowski</span> <span class="ow">and</span>
+               <span class="n">Robert</span> <span class="n">Frazier</span> <span class="ow">and</span>
+               <span class="n">Tyler</span> <span class="n">Quinn</span><span class="p">},</span>
+<span class="n">title</span>        <span class="o">=</span> <span class="p">{</span><span class="n">MPoL</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">MPoL</span><span class="p">:</span> <span class="n">v0</span><span class="mf">.1.1</span> <span class="n">Release</span><span class="p">},</span>
+<span class="n">month</span>        <span class="o">=</span> <span class="n">jun</span><span class="p">,</span>
+<span class="n">year</span>         <span class="o">=</span> <span class="mi">2021</span><span class="p">,</span>
 <span class="n">publisher</span>    <span class="o">=</span> <span class="p">{</span><span class="n">Zenodo</span><span class="p">},</span>
-<span class="n">version</span>      <span class="o">=</span> <span class="p">{</span><span class="n">v0</span><span class="mf">.0.4</span><span class="p">},</span>
-<span class="n">doi</span>          <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.3647603</span><span class="p">},</span>
-<span class="n">url</span>          <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.3647603</span><span class="p">}</span>
+<span class="n">version</span>      <span class="o">=</span> <span class="p">{</span><span class="n">v0</span><span class="mf">.1.1</span><span class="p">},</span>
+<span class="n">doi</span>          <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.4939048</span><span class="p">},</span>
+<span class="n">url</span>          <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.4939048</span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -284,7 +338,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rml_intro.html" class="btn btn-neutral float-right" title="Introduction to Regularized Maximum Likelihood Imaging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
